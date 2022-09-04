@@ -66,21 +66,22 @@ formLog.addEventListener('submit', function(e){
     let elCondition = false;
     allData.map((task)=>{
         if(task.Email === emailL.value  && task.Password === passwordL.value){
+            elCondition = true;
+            textShow.innerHTML = 'Login Success';
             setTimeout(()=>{
                 loginPage.classList.add('d-none');
                 loginPage.classList.remove('d-block');
                 mainPage.classList.add('d-block');
                 let fullname = `${task.Fname} ${task.Lname}`
-                elCondition = true;
-                textShow.innerHTML = 'Login Success';
+                
                 runTextT(task.Fname, fullname);
-            }, 2000)
+            }, 2000);
         }
+        
     });
     if(!elCondition){
         textShow.innerHTML = 'Login Filed';
     }
-    
 });
 
 function runTextT(name, fullname){
