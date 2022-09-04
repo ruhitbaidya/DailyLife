@@ -72,6 +72,7 @@ formLog.addEventListener('submit', function(e){
                 mainPage.classList.add('d-block');
                 let fullname = `${task.Fname} ${task.Lname}`
                 elCondition = true;
+                textShow.innerHTML = 'Login Success';
                 runTextT(task.Fname, fullname);
             }, 2000)
         }
@@ -79,7 +80,6 @@ formLog.addEventListener('submit', function(e){
     if(!elCondition){
         textShow.innerHTML = 'Login Filed';
     }
-    
     
 });
 
