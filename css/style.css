@@ -1,0 +1,58 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+#signup{
+    background-color:rgb(18, 203, 209);
+    position: relative;
+    height:100vh;
+}
+.signup-page{
+   border-radius: 5px;
+    width:60%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+#login{
+    background-color:rgb(18, 203, 209);
+    position: relative;
+    height:100vh;
+}
+a{
+    color:#fff;
+}
+a:hover{
+    text-decoration: none;
+
+}
+#main-page{
+    position:relative;
+    height:100vh;
+}
+.text-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.text-content h1{
+    font-size:60px;
+    color:#fff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+.custom{
+    padding:10px 100px;
+    font-size:30px;
+    margin-top:20px;
+}
+marquee{
+    color:#fff;
+    font-size:25px;
+}
+.navbar-brand{
+    text-transform: capitalize;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <!-- signup page -->
+    <section id="signup" class="">
+        <marquee>Hello This some of application for my work vanila javascript this is very small but i hope you need</marquee>
+        <div class="signup-page bg-primary p-5 text-light">
+            <p class=""></p>
+               <form>
+                   <div class="row mb-3">
+                       <div class="col-6">
+                           <label for="fname">First Name</label>
+                           <input name="fname" id="fname" placeholder="Enter Your FirstName" class="form-control" type="text">
+                       </div>
+                       <div class="col-6">
+                            <label for="lname">Last Name</label>
+                            <input name="lname" id="lname" placeholder="Enter Your Lastname" class="form-control" type="text">
+                        </div>
+                   </div>
+                   <div class="row mb-3">
+                       <div class="col-12">
+                           <label for="email">Enter Your Email</label>
+                           <input class="form-control" type="email" name="email" id="email" placeholder="Enter Your Email">
+                       </div>
+                   </div>
+                   <div class="row mb-4">
+                    <div class="col-12">
+                        <label for="password">Enter Your Password</label>
+                        <input class="form-control" type="password" name="password" id="password" placeholder="Enter Your password">
+                    </div>
+                </div>
+                   <div class="row">
+                       <div class="col-12">
+                           <button class="btn btn-outline-info btn-block" type="submit">Sign Up</button>
+                       </div>
+                       
+                   </div>
+                   <p id="signupLink" class='mt-3'><a href="#">If You have an account please Log in</a></p>
+               </form>
+        </div>
+    </section>
+
+    <!-- login page-->
+    <section id="login" class="d-none">
+        <div class="signup-page bg-primary p-5 text-light">
+            <p id="textShow" class="text-alert"></p>
+            <form id="logIn">
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <label for="emailL">Enter Your Email</label>
+                        <input class="form-control" type="email" name="emailL" id="emailL" placeholder="Enter Your Email">
+                    </div>
+                </div>
+                <div class="row mb-4">
+                 <div class="col-12">
+                     <label for="passwordL">Enter Your Password</label>
+                     <input class="form-control" type="password" name="passwordL" id="passwordL" placeholder="Enter Your password">
+                 </div>
+             </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn btn-outline-info btn-block" type="submit">Login</button>
+                    </div>
+                </div>
+                <p id="loginLink" class='mt-3'><a href="#">If You have no account please SignUp</a></p>
+            </form>
+     </div>
+    </section>
+
+    <!-- start page page -->
+
+    <section id="main-page" class="d-none bg-primary">
+        <div class="container">
+            <div class="runText">
+                <marquee behavior="" direction="">hello </marquee>
+            </div>
+            <div class="text-content text-center">
+                <button id="main-content" class="btn btn-outline-light custom"> Start </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- hello this is per page -->
+    <section id="page-all" class="d-none" class="bg-dark">
+        
+        <nav class="navbar bg-dark navbar-dark navbar-expand-md fixed-top">
+            <div class="container">
+              <a id="pageLogo" class="navbar-brand" href="#"></a>
+              <button class="navbar-toggler" data-toggle="collapse" data-target="#navBar"><span class="navbar-toggler-icon"></span></button>
+              <div class="collapse navbar-collapse" id="navBar">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#home_section">CRUD</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#explor">RunTime Oclock</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#creat">CounterUpDown</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#Contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        
+    </section>
+
+<script src="./js/jquery-slim.min.js"></script>
+<script src="./js/popper.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./indexJsFile/login.js"></script>
+</body>
+</html>
