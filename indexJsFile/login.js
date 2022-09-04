@@ -34,10 +34,10 @@ formSing.addEventListener('submit', function(e){
         alertShow.textContent = 'Pleace Fill Up All the Gap';
     }else{
         signUp()
-        setTimeout(()=>{
+        
             singupinfo.classList.add('d-none');
             loginPage.classList.add('d-block');
-        }, 2000)
+        
     }
 });
 // data collection
@@ -68,14 +68,14 @@ formLog.addEventListener('submit', function(e){
         if(task.Email === emailL.value  && task.Password === passwordL.value){
             elCondition = true;
             textShow.innerHTML = 'Login Success';
-            setTimeout(()=>{
+            
                 loginPage.classList.add('d-none');
                 loginPage.classList.remove('d-block');
                 mainPage.classList.add('d-block');
                 let fullname = `${task.Fname} ${task.Lname}`
                 
                 runTextT(task.Fname, fullname);
-            }, 2000);
+            
         }
         
     });
