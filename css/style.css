@@ -63,3 +63,8 @@ marquee{
 .bg-primarys{
     background-color: rgba(59, 39, 39, 0.603);
 }
+.navigation{
+    position:absolute;
+    top:0;
+    left:0;
+}

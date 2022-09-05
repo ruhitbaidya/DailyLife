@@ -13,7 +13,7 @@
 <body>
     
     <!-- signup page -->
-    <section id="signup" class="">
+    <section id="signup" class="d-none">
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">     
             <div class="container">
                 <a class="navbar-brand text-light" href="#">DailyLife</a>
@@ -120,11 +120,83 @@
 
 
     <!-- hello this is per page -->
-    <section id="page-all" class="d-none" class="bg-dark">
+    <section id="page-all" class="\d-none" class="bg-primary">
         
-        <nav class="navbar bg-dark navbar-dark navbar-expand-md fixed-top">
+        <div class="container-fluid">
+            <div class="row bg-primary mb-1 p-3">
+                <div class="col-md-2">
+                    <a id="pageLogo" class="" href="#">hello</a>
+                </div>
+                <div class="col-md-8">
+                    <input placeholder="Search......." class="form-control" type="text">
+                </div>
+                <div class="col-md-2 text-right">
+                    <div class="dropdown">
+                        <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Password Change</a>
+                          <a class="dropdown-item" href="#">Setting</a>
+                          <a class="dropdown-item" href="#">Sign Out</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="position-relative">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="navigation bg-dark">
+                            <div class="list-group" id="allBtn">
+                                <a href="#" id="to-do" class="list-group-item list-group-item-action ">To Do App</a>
+                                <a href="#" id="click-counter" class="list-group-item list-group-item-action ">Click Counter</a>
+                                <a href="#" id="password-generator" class="list-group-item list-group-item-action ">Password Generator</a>
+                                <a href="#" id="quize-app" class="list-group-item list-group-item-action ">Quize App</a>
+                                <a href="#" id="random-color" class="list-group-item list-group-item-action ">Random Color Generator</a>
+                                <a href="#" id="clickAudio" class="list-group-item list-group-item-action ">Click Audio</a>
+                                <a href="#" id="calculator" class="list-group-item list-group-item-action ">Simple Calculator</a>
+                                       
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <article id="allContent">
+                            <div id="to-do" class="todo-app">
+                                <h2 class="text-center mt-3">Basic CRUD Project Vanila Javascript</h2>
+                            </div>
+                            <div id="click-counter" class="click-counter ">
+                                <h2 class="text-center mt-3">Click Counter Vanila Javascript</h2>
+                            </div>
+                            <div id="password-generator" class="password-generator">
+                                <h2 class="text-center mt-3">Password Generator Vanila Javascript</h2>
+                            </div>
+                            <div  id="quize-app" class="puize-app">
+                                <h2 class="text-center mt-3">Quize App Vanila Javascript</h2>
+                            </div>
+                            <div id="random-color" class="random-color">
+                                <h2 class="text-center mt-3">Random Color Generator Vanila Javascript</h2>
+                            </div>
+                            <div id="clickAudio" class="click-audio">
+                                <h2 class="text-center mt-3">Click Audio Vanila Javascript</h2>
+                            </div>
+                            <div id="calculator" class="calculator">
+                                <h2 class="text-center mt-3">Simple Calculator Vanila Javascript</h2>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+
+
+
+
+
+
+        <!-- <nav class="navbar bg-dark navbar-dark navbar-expand-md fixed-top">
             <div class="container">
-              <a id="pageLogo" class="navbar-brand" href="#"></a>
+              
               <button class="navbar-toggler" data-toggle="collapse" data-target="#navBar"><span class="navbar-toggler-icon"></span></button>
               <div class="collapse navbar-collapse" id="navBar">
                 <ul class="navbar-nav ml-auto">
@@ -137,7 +209,7 @@
                 </ul>
               </div>
             </div>
-          </nav>
+          </nav> -->
         
     </section>
 
@@ -145,8 +217,10 @@
 <script src="./js/popper.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
 <!-- <script src="./indexJsFile/oclock.js"></script> -->
-<script src="./indexJsFile/login.js"></script>
 <script src="./js/typed.js"></script>
+<script src="./indexJsFile/login.js"></script>
+<script src="./indexJsFile/index.js"></script>
+
 <script>
     var typed = new Typed('.element', {
         strings: ['Ruhit Baidya', 'Web Developer', 'Learning Javascript'],
