@@ -37,17 +37,25 @@ formSing.addEventListener('submit', function(e){
         
             singupinfo.classList.add('d-none');
             loginPage.classList.add('d-block');
-        
+            
     }
 });
+
+function clearFields(){
+    fname.value = '';
+    lname.value = '';
+    email.value = '';
+    password.value = '';
+}
 // data collection
 function signUp(){
     let data = {
         Fname : fname.value ,
         Lname : lname.value ,
         Email : email.value ,
-        Password : password.value 
+        Password : password.value
     }
+    clearFields();
     alertShow.textContent = 'SuccessFully Register';
     allData.push(data);
     dataStorage()
@@ -99,7 +107,7 @@ function runTextT(name, fullname){
 //all link here
 function linkShowHide(){
     let loginLink = document.querySelector('#loginLink');
-    let signupLink = document.querySelector('#signupLink');
+    let signupLink = document.querySelector('#Hsign');
     
     loginLink.addEventListener('click', function(){
         loginPage.classList.add('d-none');
