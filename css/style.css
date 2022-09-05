@@ -3,19 +3,12 @@
     padding:0;
     box-sizing: border-box;
 }
-#signup{
+/* #signup{
     background-color:rgb(18, 203, 209);
     position: relative;
     height:100vh;
-}
-.signup-page{
-   border-radius: 5px;
-    width:60%;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-}
+} */
+
 #login{
     background-color:rgb(18, 203, 209);
     position: relative;
@@ -55,4 +48,18 @@ marquee{
 }
 .navbar-brand{
     text-transform: capitalize;
+}
+#signup{
+    background-image: url(../picThis.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100% 100%;
+    height:100vh;
+}
+.signup-page{
+    background-color: rgba(73, 56, 56, 0.582);
+}
+.bg-primarys{
+    background-color: rgba(59, 39, 39, 0.603);
 }
