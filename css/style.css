@@ -68,3 +68,7 @@ marquee{
     top:0;
     left:0;
 }
+#pageLogo{
+    font-size:20px;
+    padding:5px;
+}
