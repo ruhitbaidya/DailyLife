@@ -72,3 +72,14 @@ marquee{
     font-size:20px;
     padding:5px;
 }
+#countShow{
+    font-size: 50px;
+}
+.contentShowHide{
+    position:relative;
+}
+.bt-cross{
+    position:absolute;
+    top:0;
+    right:0;
+}
