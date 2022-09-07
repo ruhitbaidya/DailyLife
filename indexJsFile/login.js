@@ -110,8 +110,7 @@ function linkShowHide(){
     let signupLink = document.querySelector('#Hsign');
     
     loginLink.addEventListener('click', function(){
-        loginPage.classList.add('d-none');
-        singupinfo.classList.add('d-block');
+        document.location.reload();
     });
     signupLink.addEventListener('click', function(){
         loginPage.classList.add('d-block');
