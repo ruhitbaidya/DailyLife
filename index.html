@@ -98,8 +98,9 @@
                                     <button class="btn btn-outline-info btn-block" type="submit">Login</button>
                                 </div>
                             </div>
-                            <p id="loginLink" class='mt-3'><a href="#">If You have no account please SignUp</a></p>
-                        </form>       
+                            
+                        </form>    
+                        <p id="loginLink" class='mt-3'><a href="#">If You have no account please SignUp</a></p>   
                  </div>
                 </div>
                 <div class="col-md-4"></div>
@@ -180,12 +181,12 @@
                                 <h2 class="text-center mt-3">Password Generator Vanila Javascript</h2>
                                 <div class="passwordGen">
                                     <div class="content mt-5">
-                                        <input class="form-control" type="text" placeholder="Password" readonly>
-                                        <input class="form-control mt-3" type="text" placeholder="Type A Number">
+                                        <input id="showPass" class="form-control" type="text" placeholder="Password" readonly>
+                                        <input id="setIndex" class="form-control mt-3" type="text" placeholder="Type A Number">
                                     </div>
                                     <div class="button text-center p-5">
-                                        <button class="btn btn-primary">Password Generate</button>
-                                        <button class="btn btn-primary">Copy Password</button>
+                                        <button id="passGenerator" class="btn btn-primary">Password Generate</button>
+                                        <button id="copyPass" class="btn btn-primary">Copy Password</button>
                                     </div>
                                 </div>
                             </div>

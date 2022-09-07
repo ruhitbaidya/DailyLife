@@ -97,6 +97,25 @@ function codeSend(text){
                 showCount.innerText = count;
             
             });`;
+    }else if(text === 'password-generator'){
+        clickCode = `
+        passGenerator.addEventListener('click', function(){
+            let passLen = setIndex.value || 7;
+            let storePass = '';
+            let letterNumber = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','1','2','3','4','5','6','7','8','9','<','>','/','^','#','@','%','&','|']
+            for(let i=0; i<=passLen; i++){
+                let ranNumber = Math.floor(Math.random() * letterNumber.length);
+                storePass += letterNumber[ranNumber]
+            }
+            showPass.value = storePass;
+            
+        });
+        
+        copyPass.addEventListener('click', function(){
+            navigator.clipboard.writeText(showPass.value);
+            alert('Password Copid')
+        });
+        `
     }else{
         clickCode = '';
     }
@@ -122,6 +141,31 @@ degre.addEventListener('click', function(){
 });
 
 
+
+// password Generator all code here
+
+let showPass = document.querySelector('#showPass');
+let setIndex = document.querySelector('#setIndex');
+let passGenerator = document.querySelector('#passGenerator');
+let copyPass = document.querySelector('#copyPass');
+
+
+passGenerator.addEventListener('click', function(){
+    let passLen = setIndex.value || 7;
+    let storePass = '';
+    let letterNumber = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','1','2','3','4','5','6','7','8','9','<','>','/','^','#','@','%','&','|']
+    for(let i=0; i<=passLen; i++){
+        let ranNumber = Math.floor(Math.random() * letterNumber.length);
+        storePass += letterNumber[ranNumber]
+    }
+    showPass.value = storePass;
+    
+});
+
+copyPass.addEventListener('click', function(){
+    navigator.clipboard.writeText(showPass.value);
+    alert('Password Copid')
+});
 
 
 
