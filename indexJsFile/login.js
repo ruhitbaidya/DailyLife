@@ -17,6 +17,10 @@ let formLog = loginPage.querySelector('#logIn');
 let emailL = loginPage.querySelector('#emailL');
 let passwordL = loginPage.querySelector('#passwordL');
 
+let mainPages = document.querySelector('#main-content');
+let main = document.querySelector('#page-all');
+    // logout Variable
+    let logout = 0;
 
 // main page variable
 
@@ -26,6 +30,13 @@ let logo = document.querySelector('#pageLogo');
 let mainPage = document.querySelector('#main-page');
 
 let allData = [];
+
+// log out store
+let outStore = document.querySelector('#outStore');
+
+// random id generate
+
+let ids = Math.floor(Math.random() * 20);
 
 // operation all signup page 
 formSing.addEventListener('submit', function(e){
@@ -50,40 +61,46 @@ function clearFields(){
 // data collection
 function signUp(){
     let data = {
+        id : ids,
         Fname : fname.value ,
         Lname : lname.value ,
         Email : email.value ,
-        Password : password.value
+        Password : password.value,
+
     }
     clearFields();
     alertShow.textContent = 'SuccessFully Register';
+    
     allData.push(data);
+
     dataStorage()
 };
 
 // data storage function
-function dataStorage(data){
+function dataStorage(){
     localStorage.setItem('info', JSON.stringify(allData))
+    localStorage.setItem('id', JSON.stringify(ids));
 };
 
 
 // login page work
 
+
 formLog.addEventListener('submit', function(e){
     e.preventDefault();
     let elCondition = false;
+    logOutShow()
     allData.map((task)=>{
-        if(task.Email === emailL.value  && task.Password === passwordL.value){
+        if((task.Email === emailL.value  && task.Password === passwordL.value)){
             elCondition = true;
             textShow.innerHTML = 'Login Success';
-            
+                logout++;
                 loginPage.classList.add('d-none');
                 loginPage.classList.remove('d-block');
                 mainPage.classList.add('d-block');
-                let fullname = `${task.Fname} ${task.Lname}`
-                
-                runTextT(task.Fname, fullname);
-            
+                let fullname = `${task.Fname} ${task.Lname}`;
+                 runTextT(task.Fname, fullname);
+                 logOut(logout);
         }
         
     });
@@ -91,6 +108,37 @@ formLog.addEventListener('submit', function(e){
         textShow.innerHTML = 'Login Filed';
     }
 });
+
+let boleanLog = false;
+// logout function here
+function logOut(num){
+    localStorage.setItem('logInfo', JSON.stringify(num));
+    
+}
+
+function logData(){
+    let logFind = JSON.parse(localStorage.getItem('logInfo'));
+   if(logFind === 1){
+        boleanLog = true;
+   }
+}
+logData();
+
+function logOutShow(){
+    if(boleanLog){
+        let idco = JSON.parse(localStorage.getItem('id'));
+        allData.map((tasks)=>{
+            if(tasks.id === idco){
+                main.classList.add('d-block');
+                main.classList.remove('d-none');
+                singupinfo.classList.add('d-none');
+                let fullname2 = `${tasks.Fname} ${tasks.Lname}`;
+                 runTextT(tasks.Fname, fullname2);
+            }
+        })
+    }
+}
+logOutShow();
 
 
 function runTextT(name, fullname){
@@ -102,6 +150,12 @@ function runTextT(name, fullname){
     logo.textContent = fullname;
     
 }
+
+// log out store function 
+outStore.addEventListener('click', function(){
+    localStorage.removeItem('logInfo');
+    document.location.reload();
+})
 
 
 //all link here
@@ -122,6 +176,8 @@ linkShowHide();
 
 (()=>{
     allData = JSON.parse(localStorage.getItem('info')) || [];
+    logOutShow();
+
 })();
 
 
@@ -130,9 +186,8 @@ linkShowHide();
 // main page work start
 
 
-let mainPages = document.querySelector('#main-content');
-let main = document.querySelector('#page-all');
 mainPages.addEventListener('click', function(){
     mainPage.classList.remove('d-block');
     main.classList.add('d-block');
 });
+
