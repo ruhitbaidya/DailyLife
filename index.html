@@ -126,24 +126,60 @@
         <div class="container-fluid">
             <div class="row bg-primary mb-1 p-3">
                 <div class="col-md-2">
-                    <a id="pageLogo" class="" href="#">hello</a>
+                    <div id="profileSortImage" data-toggle="modal" data-target="#profileModal">
+                        <img   alt="R">
+                        <a id="pageLogo" class="" href="#">hello</a>
+                    </div>
+                    
                 </div>
                 <div class="col-md-8">
-                    <input placeholder="Search......." class="form-control" type="text">
+                    <input placeholder="Search......." class="form-control mt-1" type="text">
                 </div>
                 <div class="col-md-2 text-right">
                     <div class="dropdown">
-                        <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      
+                        <button class="btn bg-primary menuIcon" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-bars"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <a class="dropdown-item" href="#">Password Change</a>
-                          <a class="dropdown-item" href="#">Setting</a>
+                          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#profileModal">Profile</a>
                           <a id="outStore" class="dropdown-item" href="#">Sign Out</a>
                         </div>
                       </div>
                 </div>
             </div>
+
+
+            <div class="profileModal">
+                <!-- Button trigger modal -->
+                
+
+                <!-- Modal -->
+                <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Upload Image</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                       <input id="selectImg" class="form-control" type="file">
+                       <div id="showImg" class="show">
+                        
+                       </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
             <div class="position-relative">
                 <div class="row">
                     <div class="col-md-2">

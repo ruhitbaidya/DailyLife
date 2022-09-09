@@ -83,3 +83,19 @@ marquee{
     top:0;
     right:0;
 }
+.menuIcon{
+    color:#fff;
+    font-size: 20px;
+}
+.show img{
+
+    margin:10px auto;
+    width:200px;
+    height:200px;
+}
+
+#profileSortImage img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+}

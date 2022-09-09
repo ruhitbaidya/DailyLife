@@ -191,3 +191,31 @@ mainPages.addEventListener('click', function(){
     main.classList.add('d-block');
 });
 
+
+
+// profile image work
+
+let selectImg = document.querySelector('#selectImg');
+let showImg = document.querySelector('#showImg');
+let profileSortImage = document.querySelector('#profileSortImage img');
+selectImg.addEventListener('change', function(){
+    let reader = new FileReader();
+    reader.addEventListener('load', function(){
+        let storeImg = reader.result;
+        localStorage.setItem('image_Profile', storeImg)
+    });
+    reader.readAsDataURL(this.files[0]);
+
+    
+});
+
+
+    document.addEventListener('DOMContentLoaded', function(){
+        let image = localStorage.getItem('image_Profile');
+        let imgs = document.createElement('img');
+        imgs.src = image;
+        showImg.appendChild(imgs);
+        profileSortImage.src = image;
+    });
+
+
