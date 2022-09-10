@@ -108,7 +108,7 @@ marquee{
 }
 .image img{
     width:80%;
-    height:500px;
+    height:auto;
 }
 hr{
     background-color:#fff;
