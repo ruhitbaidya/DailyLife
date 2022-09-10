@@ -13,7 +13,7 @@ let textShow = document.querySelector('#textShow');
 // login variable
 
 let loginPage = document.querySelector('#login');
-let formLog = loginPage.querySelector('#logIn');
+let formLog = loginPage.querySelector('#logInpage');
 let emailL = loginPage.querySelector('#emailL');
 let passwordL = loginPage.querySelector('#passwordL');
 
@@ -78,36 +78,50 @@ function signUp(){
 
 // data storage function
 function dataStorage(){
-    localStorage.setItem('info', JSON.stringify(allData))
-    localStorage.setItem('id', JSON.stringify(ids));
+    if(localStorage.getItem('info') === null){
+        localStorage.setItem('info', JSON.stringify(allData))
+        localStorage.setItem('id', JSON.stringify(ids));
+    }else{
+        alert('You have already an a account please login')
+    }
+
+    
 };
 
 
 // login page work
-
-
+let catchpass = '';
+let indexs = '';
 formLog.addEventListener('submit', function(e){
     e.preventDefault();
     let elCondition = false;
-    logOutShow()
-    allData.map((task)=>{
-        if((task.Email === emailL.value  && task.Password === passwordL.value)){
-            elCondition = true;
-            textShow.innerHTML = 'Login Success';
-                logout++;
-                loginPage.classList.add('d-none');
-                loginPage.classList.remove('d-block');
-                mainPage.classList.add('d-block');
-                let fullname = `${task.Fname} ${task.Lname}`;
-                 runTextT(task.Fname, fullname);
-                 logOut(logout);
-        }
-        
-    });
+    logOutShow();
+   allData.map((task, index)=>{
+    if((task.Email === emailL.value  && task.Password === passwordL.value)){
+        elCondition = true;
+        textShow.innerHTML = 'Login Success';
+            logout++;
+            loginPage.classList.add('d-none');
+            loginPage.classList.remove('d-block');
+            mainPage.classList.add('d-block');
+            let fullname = `${task.Fname} ${task.Lname}`;
+             runTextT(task.Fname, fullname);
+             logOut(logout);   
+             catchpass = task.Password;   
+             indexs= index ;
+    }
+   });
     if(!elCondition){
         textShow.innerHTML = 'Login Filed';
     }
+
+
 });
+
+
+
+
+
 
 let boleanLog = false;
 // logout function here
@@ -127,13 +141,13 @@ logData();
 function logOutShow(){
     if(boleanLog){
         let idco = JSON.parse(localStorage.getItem('id'));
-        allData.map((tasks)=>{
-            if(tasks.id === idco){
+        allData.map((taskss)=>{
+            if(taskss.id === idco){
                 main.classList.add('d-block');
                 main.classList.remove('d-none');
                 singupinfo.classList.add('d-none');
-                let fullname2 = `${tasks.Fname} ${tasks.Lname}`;
-                 runTextT(tasks.Fname, fullname2);
+                let fullname2 = `${taskss.Fname} ${taskss.Lname}`;
+                 runTextT(taskss.Fname, fullname2);
             }
         })
     }
@@ -169,16 +183,12 @@ function linkShowHide(){
     signupLink.addEventListener('click', function(){
         loginPage.classList.add('d-block');
         singupinfo.classList.add('d-none');
-    })
+    });
 }
 linkShowHide();
 
 
-(()=>{
-    allData = JSON.parse(localStorage.getItem('info')) || [];
-    logOutShow();
 
-})();
 
 
 
@@ -193,29 +203,82 @@ mainPages.addEventListener('click', function(){
 
 
 
-// profile image work
+// profile javascript set local store
+let saveChange = document.querySelector('.saveChange');
+let imageColl  = document.querySelector('#imageColl');
+let imageShow = document.querySelector('#image img');
+let profileDis = document.querySelector('.customSize');
+let uploadImage = '';
 
-let selectImg = document.querySelector('#selectImg');
-let showImg = document.querySelector('#showImg');
-let profileSortImage = document.querySelector('#profileSortImage img');
-selectImg.addEventListener('change', function(){
-    let reader = new FileReader();
-    reader.addEventListener('load', function(){
-        let storeImg = reader.result;
-        localStorage.setItem('image_Profile', storeImg)
+
+    imageColl.addEventListener('change', function(){
+        let reader = new FileReader();
+        reader.addEventListener('load', function(){
+            uploadImage = reader.result;
+            imageShow.src = uploadImage;
+            profileDis.src = uploadImage;
+            localStorage.setItem('profile-image', uploadImage);
+        });
+        reader.readAsDataURL(this.files[0]);
     });
-    reader.readAsDataURL(this.files[0]);
-
-    
-});
-
 
     document.addEventListener('DOMContentLoaded', function(){
-        let image = localStorage.getItem('image_Profile');
-        let imgs = document.createElement('img');
-        imgs.src = image;
-        showImg.appendChild(imgs);
-        profileSortImage.src = image;
+        let findImage = localStorage.getItem('profile-image');
+        imageShow.src = findImage;
+            profileDis.src = findImage;
     });
 
 
+    // delete account 
+
+    let delAccount = document.querySelector('#deleteAccount');
+    delAccount.addEventListener('click', function(){
+        let delText = prompt('delete account');
+        if(delText === 'delete account'){
+           if(confirm('Are Your Delete Your Account If You Delete This Account Did Not Recovery you any data')){
+            localStorage.clear();
+            document.location.reload();
+           }
+        }
+    });
+
+    // password change option
+
+    let passchage = document.querySelector('#passChangButton');
+    passchage.addEventListener('click', passcang);
+   
+    function passcang(){
+        let oldPass = document.querySelector('#oldPass').value;
+        let newpass = document.querySelector('#newPass').value;
+        let retyprpass = document.querySelector('#retypepass').value;
+        
+        allData.map((data, index)=>{
+            if(data.Password === oldPass){
+                allData.splice(index, 1);
+                if(newpass === retyprpass){
+                    console.log(data.Fname)
+                   let addpass =  {
+                        id : data.id,
+                        Fname : data.Fname,
+                        Lname : data.Lname ,
+                        Email : data.Email ,
+                        Password : retyprpass
+                   }
+                   
+                   allData.push(addpass)
+                   localStorage.setItem('info', JSON.stringify(allData));
+                   if(confirm('stay login or log out')){
+                        localStorage.removeItem('logInfo');
+                        document.location.reload();
+                   }
+                }
+            }
+        })
+        
+
+    }
+
+    (()=>{
+        allData = JSON.parse(localStorage.getItem('info')) || [];
+        logOutShow();
+    })();

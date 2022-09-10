@@ -80,7 +80,7 @@
                 <div class="col-md-4 mt-5 pt-5">
                     <div class="signup-page bg-primarys p-5 text-light">
                         <p id="textShow" class="text-alert"></p>
-                        <form id="logIn">
+                        <form id="logInpage">
                             <div class="row mb-3">
                                 <div class="col-12">
                                     <label for="emailL">Enter Your Email</label>
@@ -125,55 +125,74 @@
         
         <div class="container-fluid">
             <div class="row bg-primary mb-1 p-3">
-                <div class="col-md-2">
-                    <div id="profileSortImage" data-toggle="modal" data-target="#profileModal">
-                        <img   alt="R">
-                        <a id="pageLogo" class="" href="#">hello</a>
-                    </div>
-                    
+                <div class="col-md-3 text-center" data-toggle="modal" data-target="#Profile">
+                    <img class="customSize" alt="">
+                    <a id="pageLogo" class="mt-4" href="#">hello</a>
                 </div>
-                <div class="col-md-8">
-                    <input placeholder="Search......." class="form-control mt-1" type="text">
+                <div class="col-md-7">
+                    <input  placeholder="Search......." class="form-control mt-2" type="text">
                 </div>
                 <div class="col-md-2 text-right">
                     <div class="dropdown">
-                        <button class="btn bg-primary menuIcon" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn menuse bg-primary text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa-solid fa-bars"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Password Change</a>
-                          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#profileModal">Profile</a>
+                          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#changepass">Password Change</a>
+                          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#Profile">Profile</a>
                           <a id="outStore" class="dropdown-item" href="#">Sign Out</a>
+                          <a id="deleteAccount" class="dropdown-item" href="#">Delete Account</a>
                         </div>
                       </div>
                 </div>
             </div>
+            <!-- modal change password-->
 
-
-            <div class="profileModal">
-                <!-- Button trigger modal -->
-                
-
-                <!-- Modal -->
-                <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal fade" id="changepass" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
+                <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Upload Image</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Vanila javascript Code</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                        </button>
+                    </button>
                     </div>
                     <div class="modal-body">
-                       <input id="selectImg" class="form-control" type="file">
-                       <div id="showImg" class="show">
-                        
-                       </div>
+                        <label for="oldPass">Old Password</label>
+                        <input type="text" id="oldPass" class="form-control">
+                        <label for="newPass">New Password</label>
+                        <input type="password" id="newPass" class="form-control">
+                        <label for="retypepass">Re Type Password</label>
+                        <input type="password" id="retypepass" class="form-control">
+                    </div>
+
+                    <div class="modal-footer">
+                    <button type="button" id="passChangButton" data-dismiss="modal" class="btn btn-secondary">Save </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="Profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Vanila javascript Code</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <input id="imageColl" type="file" class="form-control">
+                        <div id="image">
+                            <img  alt="No">
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        
-                    </div>
+                    <button type="button" class="btn btn-secondary saveChange">Save </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
                 </div>
@@ -244,28 +263,6 @@
             </div>
            
         </div>
-
-
-
-
-
-
-        <!-- <nav class="navbar bg-dark navbar-dark navbar-expand-md fixed-top">
-            <div class="container">
-              
-              <button class="navbar-toggler" data-toggle="collapse" data-target="#navBar"><span class="navbar-toggler-icon"></span></button>
-              <div class="collapse navbar-collapse" id="navBar">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link mr-3" href="#creat"><i class="fa-solid fa-bell"></i></a> 
-                    </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="timeShow" href="#creat"></a> 
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav> -->
         
     </section>
 
