@@ -137,15 +137,15 @@
                 </div>
                 <div class="col-md-1 text-right">
                     
-                    <div class="dropdown">
-                        <button class="btn menuse bg-primary text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="dropdownmenu">
+                        <button class="btn menuse bg-primary text-light" type="button" id="dropdownButton">
                             <i class="fa-solid fa-bars"></i>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#changepass">Password Change</a>
-                          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#Profile">Profile</a>
-                          <a id="outStore" class="dropdown-item" href="#">Sign Out</a>
-                          <a id="deleteAccount" class="dropdown-item" href="#"> Delete Account</a>
+                        <div class="dropdown-menus d-none">
+                          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#changepass"><i class="fa-solid fa-lock"></i> Password Change</a>
+                          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#Profile"><i class="fa-solid fa-user"></i> Profile</a>
+                          <a id="outStore" class="dropdown-item" href="#"> <i class="fa-solid fa-power-off"></i> Sign Out</a>
+                          <a id="deleteAccount" class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete Account</a>
                           <a href="info.html" target="_blank" class="dropdown-item"><i class="fa-sharp fa-solid fa-circle-info"></i> Information</a>
                         </div>
                     </div>
@@ -209,7 +209,7 @@
                     <div class="col-md-2">
                         <div class="navigation bg-dark">
                             <div class="list-group" id="allBtn">
-                                <a href="#" id="to-do" class="list-group-item list-group-item-action ">To Do App</a>
+                                <a href="#" id="to-do" class="list-group-item list-group-item-action">To Do App</a>
                                 <a href="#" id="click-counter" class="list-group-item list-group-item-action ">Click Counter</a>
                                 <a href="#" id="password-generator" class="list-group-item list-group-item-action ">Password Generator</a>
                                 <a href="#" id="quize-app" class="list-group-item list-group-item-action ">Quize App</a>
@@ -225,6 +225,71 @@
                             
                             <div id="to-do" class="todo-app contentShowHide">
                                 <h2 class="text-center mt-3">Basic CRUD Project Vanila Javascript</h2>
+                                <div class="mainop">
+                                    <div class="contentCrud">
+                                        <p class="alertText">not done</p>
+                                            <form action="#" id="crudForm">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <label for="id">ID</label>
+                                                        <input id="crudId" type="text" class="form-control" readonly>
+                                                    </div>
+                                                    <div class="col-md-4"></div>
+                                                    <div class="col-md-4">
+                                                        <label for="">Date</label>
+                                                        <input id="crudCurrentDate" type="text" class="form-control" placeholder="12/12/2022" readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="row my-3">
+                                                    <div class="col-md-6">
+                                                        <label for="crudfnam">First Name</label>
+                                                        <input id="crudfname" type="text" class="form-control" placeholder="First Name">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label id="crudLnam" for="">Last Name</label>
+                                                        <input id="crudLname" type="text" class="form-control" placeholder="Last Name">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label id="crudAg" for="">Age</label>
+                                                        <input id="crudAge" type="number" class="form-control" placeholder="Age">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label id="crudSelDat" for="">Date</label>
+                                                        <input id="crudSelDate" type="date" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="row my-3">
+                                                    <div class="col-md-6">
+                                                        <button class="btn btn-block btn-primary" type="reset">Reset</button>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <button id="crudSubmit" class="btn btn-block btn-primary" type="submit">Submit</button>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <h5>All Data Show Here</h5>
+                                                    <table class="table" id="tableContent">
+                                                       <thead>
+                                                            <tr>
+                                                                <th>First Name</th>
+                                                                <th>Last Name</th>
+                                                                <th>Age</th>
+                                                                <th>Date</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                       </thead>
+                                                       <tbody id="content-show">
+
+                                                       </tbody>
+                                                        
+                                                    </table>
+                                                </div>
+                                            </form>
+                                    </div>
+                                </div>
                             </div>
                             <div id="click-counter" class="click-counter contentShowHide">
                                 <h2 class="text-center mt-3">Click Counter Vanila Javascript</h2>
@@ -277,6 +342,7 @@
 <script src="./indexJsFile/oclock.js"></script>
 <script src="./js/typed.js"></script>
 <script src="./indexJsFile/login.js"></script>
+<script src="./indexJsFile/crud.js"></script>
 <script src="./indexJsFile/index.js"></script>
 
 <script>

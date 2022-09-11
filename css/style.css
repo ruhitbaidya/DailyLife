@@ -114,7 +114,6 @@ hr{
     background-color:#fff;
 }
 .link a{
-    
     text-align:center;
     display: inline-block;
     font-size: 20px;
@@ -142,4 +141,24 @@ hr{
     padding:10px;
     color:#fff;
     display: block;
+}
+#page-all{
+    position: relative;
+}
+.dropdown-menus{
+    position:absolute;
+    top:10%;
+    right:0;
+    background:#007bff;
+    padding:5px;
+   text-align: left;
+   margin-top:70px;
+   border-radius:5px;
+   z-index: 200;
+}
+.dropdown-menus a{
+    color:aliceblue;
+}
+.dropdown-menus i{
+    margin-right:10px;
 }

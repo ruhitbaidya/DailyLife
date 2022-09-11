@@ -168,4 +168,10 @@ copyPass.addEventListener('click', function(){
 });
 
 
+// drop down js here
+let contents = document.querySelector('.dropdown-menus');
+let dropMenu = document.querySelector('#dropdownButton');
+dropMenu.addEventListener('click', function(){
+    contents.classList.toggle('d-none')
+});
 

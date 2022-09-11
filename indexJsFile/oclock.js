@@ -22,7 +22,7 @@ function oclock(){
         hours = hours;
         zoon = 'AM';
     }
-    if(hours < 9){
+    if(hours <= 9){
         hours = '0' + hours;
     }
     
