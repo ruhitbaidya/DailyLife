@@ -35,8 +35,7 @@ function oclock(){
    document.getElementById('timeShow').innerText = `${hours} : ${munits} : ${second}  ${zoon}`
 
 
-    setInterval(() => {
-        oclock()
-    }, 500);
+   
 }
-oclock()
+
+setInterval(oclock, 500);
