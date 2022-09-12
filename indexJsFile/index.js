@@ -116,7 +116,83 @@ function codeSend(text){
             alert('Password Copid')
         });
         `
-    }else{
+    }else if(text === 'to-do'){
+        clickCode = `
+        // submit form
+
+        crudForm.addEventListener('submit', function(){
+            formValidation();
+        });
+        
+        // form validation
+        function formValidation(){
+            if(crudfname.value === '' || crudLname.value === '' || crudAge.value === '' || crudSelDate.value === ''){
+                alertText.innerText = 'Please Fill Up all Gap';
+            }else{
+                acceptData();
+            }
+        }
+        
+        
+        let alldata = {};
+        let dataArr = []
+        function acceptData(){
+            alldata = {
+                Name : crudfname.value,
+                LName : crudLname.value,
+                age : crudAge.value,
+                date : crudSelDate.value
+            }
+            dataArr.push(alldata);
+            localStorage.setItem('crudData', JSON.stringify(dataArr));
+            createPost()
+        }
+        
+        function createPost(){
+            tableContent.innerHTML = '';
+            dataArr.map((task, index)=>{
+                tableContent.innerHTML += 
+                  
+                            <a class="btn btn-warning" onclick="editData(this)">Edit</a>
+                            <a class="btn btn-danger" onclick="deleteData(this)">Delete</a>
+                        </td>
+                    </tr>
+                
+            });
+            crudId.value = dataArr.length + 1;
+            clearField();
+        };
+        
+        function clearField(){
+            crudfname.value = '',
+            crudLname.value = '',
+            crudAge.value = '',
+            crudSelDate.value = ''
+        }
+        
+        function editData(e){
+            let elements = e.parentElement.parentElement.children;
+            crudfname.value = elements[0].innerText;
+            crudLname.value = elements[1].innerText;
+            crudAge.value = elements[2].innerText;
+            crudSelDate.value = elements[3].innerText;
+            dataArr.splice(e.parentElement.parentElement.id, 1);
+        }
+        
+        function deleteData(e){
+            e.parentElement.parentElement.remove();
+            dataArr.splice(e.parentElement.parentElement.id, 1);
+            localStorage.setItem('crudData', JSON.stringify(dataArr));
+        }
+        
+        (()=>{
+            dataArr = JSON.parse(localStorage.getItem('crudData')) || [];
+            createPost();
+        })();
+                
+        `
+    }
+    else{
         clickCode = '';
     }
 }

@@ -1,18 +1,24 @@
 // oclock code 
 function oclock(){
     let data = new Date();
-
+    let crudCurrentDate = content.querySelector('#crudCurrentDate');
     let hours = data.getHours();
     let munits = data.getMinutes();
     let second = data.getSeconds();
     let zoon = '';
-    
-    
+    let day = data.getDay();
+    let month = data.getMonth();
+    let year = data.getFullYear();
+    let dates = data.getDate();
+    let days = ['Sun', 'Mon', 'Tue', 'Wed', 'The', 'Fri', 'Sat']
+    let monthsName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let showdate = `${dates} / ${month} / ${year} - ${days[day]} - ${monthsName[month]}`
+    crudCurrentDate.value = showdate;
 
     if(second <= 9){
         second = '0' + second;
     }
-    if(hours >= 12){
+    if(hours > 12 ){
         hours =  hours - 12;
         zoon = 'PM'
     }else if(hours == 0){
@@ -39,3 +45,4 @@ function oclock(){
 }
 
 setInterval(oclock, 500);
+
