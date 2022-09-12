@@ -9,7 +9,6 @@ findButton.forEach(button => {
         });
         let text = this.id;
             sectionMatch(text)
-            console.log(text)
     });
    
 });
