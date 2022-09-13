@@ -50,15 +50,15 @@ function loadQuection(){
         timePart.classList.remove('d-block')
         return quizes.innerHTML = `
             <h3>Thanks For Playing This Game </h3>
-            <h5>${right} Out Of ${totle} </h5>
+            <h5>You Win ${right} Out Of ${totle} </h5>
         `
     };
     document.querySelector('.startButton').addEventListener('click', function(){
         quizess.classList.add('d-block')
         this.classList.add('d-none')
         timePart.classList.add('d-block')
-
-        // timercontrol()
+        timersShow()
+        answarFindButton.setAttribute('disabled', true);
     });
     resetRadio();
     let data = jsonData[indexss];
@@ -66,19 +66,20 @@ function loadQuection(){
     labelCheck[0].innerText = data.a;
     labelCheck[1].innerText = data.b;
     labelCheck[2].innerText = data.c;
-    
 };
 
 // answar match
+
 function findAnwar(){
     let data = jsonData[indexss];
     const findans = answar();
     if(findans === data.answer){
         right++;
-    }
+    };
     indexss++;
+    timersShow();
     loadQuection();
-    
+    answarFindButton.setAttribute('disabled', true);
 }
 
 // check valid or invalid
@@ -87,6 +88,7 @@ function answar(){
     radioCheck.forEach((input)=>{
         if(input.checked){
             ans = input.value;
+            console.log('ruhit')
         }
     })
     return ans;
@@ -100,26 +102,31 @@ function resetRadio(){
 }
 
 // timer setting
-// let counts = 5;
-// let countscha = document.querySelector('.countscha');
+let answarFindButton = document.querySelector('#answarFindButton');
 
-// function counttimer(){
-//     counts--;
-//     if(counts <= 9){
-//         countscha.innerText = '0' + counts;
-//     }else{
-//         countscha.innerText = counts;
-//     }   
-//     if(counts == 0){
-//         console.log('hello')
-//         stopInter();
-//     }
-// }
+function timersShow(){
+    let timeLeftShow = document.querySelector('.countscha');
+    let clearInter = setInterval(timerWork, 1000);
+    let counts = 16;
+    function timerWork(){
+        counts--;
+        if(counts <= 9){
+            timeLeftShow.innerText = '0' + counts;
+        }else{
+            timeLeftShow.innerText = counts;
+        }
+        radioCheck.forEach((input)=>{
+            if(input.checked){
+                clearInterval(clearInter);
+                answarFindButton.removeAttribute('disabled');
+            }
+        });
+        if(counts == 0){
+            clearInterval(clearInter);
+            findAnwar();
+            counts = 15;
+        };
+    };
+};
 
-// function timercontrol(){
-//    setInterval(counttimer, 1000);  
-// }
-// function stopInter(){
-//     console.log('hello2')
-// }
 loadQuection();

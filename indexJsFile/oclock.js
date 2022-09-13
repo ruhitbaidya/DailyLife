@@ -32,7 +32,7 @@ function oclock(){
         hours = '0' + hours;
     }
     
-    if(munits < 9){
+    if(munits <= 9){
         munits = '0' + munits;
     }
 
