@@ -315,7 +315,42 @@
                                 </div>
                             </div>
                             <div  id="quize-app" class="puize-app contentShowHide">
-                                <h2 class="text-center mt-3">Quize App Vanila Javascript</h2>
+                                <h2 class="text-center mt-3 mb-5">Quize App Vanila Javascript</h2>
+                                <section id="quize-con">
+                                    <div class="time-left d-none">
+                                        <span class="text-light px-1 rounded d-inline-block">Time Left<span class="rounded bg-danger p-1 m-2 d-inline-block countscha">00</span></span>
+                                    </div>
+                                    <div class="main-con">
+                                        
+                                        <div class="startButton text-center p-5" >
+                                            <h5 class="mb-4">Start The Quize Please click the button</h5>
+                                            <button class="btn btn-outline-primary btn-lg px-5">Start</button>
+                                        </div>
+                                        <div class="quizes d-none">
+                                            <h4 class="mb-2">What is the quection</h4>
+                                            <div class="form-check mb-1">
+                                                <input value="a" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                  Default radio
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-1">
+                                                <input value="b" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                  Default radio
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-1">
+                                                <input value="c" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                                <label class="form-check-label" for="flexRadioDefault3">
+                                                  Default radio
+                                                </label>
+                                            </div>
+                                            
+                                            <button onclick="findAnwar()" class="btn btn-block btn-primary mt-4">Submit</button>
+                                        </div>
+                                    </div>
+                                </section>
                             </div>
                             <div id="random-color" class="random-color contentShowHide">
                                 <h2 class="text-center mt-3">Random Color Generator Vanila Javascript</h2>
@@ -342,6 +377,7 @@
 <script src="./js/typed.js"></script>
 <script src="./indexJsFile/login.js"></script>
 <script src="./indexJsFile/crud.js"></script>
+<script src="./indexJsFile/quize.js"></script>
 <script src="./indexJsFile/index.js"></script>
 
 <script>
