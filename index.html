@@ -10,10 +10,14 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    
+<body onload="MyfunLoad()">
+    <div class="main_pre">
+        <div class="loader">Loading...</div>
+
+    </div>
     <!-- signup page -->
     <section id="signup" class="">
+        
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">     
             <div class="container">
                 <a class="navbar-brand text-light" href="#">DailyLife</a>
@@ -381,6 +385,11 @@
 <script src="./indexJsFile/index.js"></script>
 
 <script>
+    // page reload show spinner
+    let pageReload = document.querySelector('.main_pre');
+    function MyfunLoad(){
+        pageReload.style.display = 'none';
+    }
     var typed = new Typed('.element', {
         strings: ['Ruhit Baidya', 'Web Developer', 'Learning Javascript'],
         typeSpeed : 60,
