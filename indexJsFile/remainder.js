@@ -1,21 +1,34 @@
 // all code here
+let remainderToDate = document.querySelector('#remainderToDate');
+// create date
+let dates = new Date();
+let month = dates.getMonth();
+let days = dates.getDate();
+let years = dates.getFullYear();
 
+
+month = month + 1;
+if(month < 10){
+    month = '0' + month
+}
+remainderToDate.value = `${years}-${month}-${days}`
 let buttonclick = document.querySelector('.notificationBar');
 let messageContent = document.querySelector('#messageId');
+
 
 buttonclick.addEventListener('click', function(){
     messageContent.classList.toggle('d-block');
 });
 
+messageContent.textContent = 'hello'
 
 // remainder message work 
 let msgForm = document.querySelector('#msgForm');
 let mesgDate = document.querySelector('#remainderDate');
 let msgText = document.querySelector('#inputMessage');
-let remainderToDate = document.querySelector('#remainderToDate');
 let remainderDisplay = document.querySelector('#remainderDisplay');
 
-console.log('di')
+
 msgForm.addEventListener('submit', function(e){
     e.preventDefault();
     if(mesgDate.value === '' || msgText.value === ''){
@@ -67,24 +80,23 @@ function removeRemainder(e){
     localStorage.setItem('remainderMsg', JSON.stringify(messgeData));
 }
 
-function callRemainder(){
-    messgeData.map((dateFind, index)=>{
-        if(dateFind.date === remainderToDate.value){
-            messageContent.innerHTML += `<p> ${messgeData[index].message} </p>`;
+function callingNotification(){
+    messgeData.map((dataNoti)=>{
+        if(dataNoti.date === remainderToDate.value){
+            messageContent.innerHTML += `<p>${dataNoti.message}</p>`;
             messageContent.previousElementSibling.classList.add('notificationShow');
             setInterval(()=>{
-                alert('To Day You Have A New Meassage Please Check Your Notification ')
+                alert('You have A new message Please Check Your Notification')
             }, 15000)
         }
     });
-}
-
-
+};
 
 (()=>{
     messgeData = JSON.parse(localStorage.getItem('remainderMsg')) || [];
-    console.log(messgeData)
     remainderDisplayFun();
-})()
+})();
 
-callRemainder();
+
+
+callingNotification()
