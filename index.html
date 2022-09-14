@@ -136,9 +136,14 @@
                 <div class="col-md-6">
                     <input  placeholder="Search......." class="form-control mt-2" type="text">
                 </div>
-                <div class="col-md-2 text-center">
-                    <time id="timeShow"> </time>
+                <div class="col-md-2 text-c">
+                    <time class="d-inline-block pl-0" id="timeShow"> </time>
+                    <span class="d-inline-block ml-3 text-light notificationBar"><i class="fa-solid fa-bell"></i></span>
+                    <div class="d-none" id="messageId">
+                        No Message Yet
+                    </div>
                 </div>
+                
                 <div class="col-md-1 text-right">
                     
                     <div class="dropdownmenu">
@@ -213,6 +218,7 @@
                     <div class="col-md-2">
                         <div class="navigation bg-dark">
                             <div class="list-group" id="allBtn">
+                                <a href="#" id="remainderCs" class="list-group-item list-group-item-action">Remainder Message</a>
                                 <a href="#" id="to-do" class="list-group-item list-group-item-action">To Do App</a>
                                 <a href="#" id="click-counter" class="list-group-item list-group-item-action ">Click Counter</a>
                                 <a href="#" id="password-generator" class="list-group-item list-group-item-action ">Password Generator</a>
@@ -225,7 +231,51 @@
                     </div>
                     <div class="col-md-10">
                         <article id="allContent">
-                            
+                            <div id="remainderCs" class="calculator contentShowHide">
+                                <h2 class="text-center mt-3">Remainder Message Vanila Javascript</h2>
+                                <div class="remainder-Message p-4 mt-5">
+                                    <form id="msgForm">
+                                        <div class="row mb-4">
+                                            <div class="col-md-6">
+                                                <label for="">Remainder Date</label>
+                                                <input id="remainderDate" type="date" class="form-control">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="">ToDay</label>
+                                                <input id="remainderToDate" type="text" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <div class="col-md-12">
+                                                <label for="">Remainder Message Write</label>
+                                                <textarea placeholder="Message Write " class="form-control" name="message" id="inputMessage" cols="30" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <div class="col-md-12">
+                                                <button class="btn btn-block btn-primary">Set Remainder</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4>Remainder List </h4>
+                                            <table class="table text-center">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Remainder Date</th>
+                                                        <th>Remainder Message</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="remainderDisplay">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div id="to-do" class="todo-app contentShowHide">
                                 <h2 class="text-center mt-3">Basic CRUD Project Vanila Javascript</h2>
                                 <div class="mainop">
@@ -382,6 +432,7 @@
 <script src="./indexJsFile/login.js"></script>
 <script src="./indexJsFile/crud.js"></script>
 <script src="./indexJsFile/quize.js"></script>
+<script src="./indexJsFile/remainder.js"></script>
 <script src="./indexJsFile/index.js"></script>
 
 <script>

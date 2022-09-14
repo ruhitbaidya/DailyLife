@@ -2,6 +2,7 @@
 function oclock(){
     let data = new Date();
     let crudCurrentDate = content.querySelector('#crudCurrentDate');
+    let remainderToDate = document.querySelector('#remainderToDate');
     let hours = data.getHours();
     let munits = data.getMinutes();
     let second = data.getSeconds();
@@ -14,7 +15,11 @@ function oclock(){
     let monthsName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     let showdate = `${dates} / ${month +1} / ${year} - ${days[day]} - ${monthsName[month]}`
     crudCurrentDate.value = showdate;
-
+    month = month +1
+    if(month < 10){
+        month = '0' + month;
+    }
+    remainderToDate.value = `${year}-${month}-${dates}`
     if(second <= 9){
         second = '0' + second;
     }
