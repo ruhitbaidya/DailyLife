@@ -12,7 +12,7 @@ function oclock(){
     let dates = data.getDate();
     let days = ['Sun', 'Mon', 'Tue', 'Wed', 'The', 'Fri', 'Sat']
     let monthsName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    let showdate = `${dates} / ${month} / ${year} - ${days[day]} - ${monthsName[month]}`
+    let showdate = `${dates} / ${month +1} / ${year} - ${days[day]} - ${monthsName[month]}`
     crudCurrentDate.value = showdate;
 
     if(second <= 9){
