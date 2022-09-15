@@ -79,17 +79,21 @@ function removeRemainder(e){
     messgeData.splice(idFind, 1);
     localStorage.setItem('remainderMsg', JSON.stringify(messgeData));
 }
-
+let booleShow = false;
 function callingNotification(){
     messgeData.map((dataNoti)=>{
         if(dataNoti.date === remainderToDate.value){
             messageContent.innerHTML += `<p>${dataNoti.message}</p>`;
             messageContent.previousElementSibling.classList.add('notificationShow');
+            booleShow  = true;
             setInterval(()=>{
                 alert('You have A new message Please Check Your Notification')
             }, 15000)
         }
     });
+    if(!booleShow){
+        messageContent.innerHTML = `You Have Message Yet Remainder`;
+    }
 };
 
 (()=>{
