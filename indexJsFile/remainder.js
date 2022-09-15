@@ -92,7 +92,7 @@ function callingNotification(){
         }
     });
     if(!booleShow){
-        messageContent.innerHTML = `You Have Message Yet Remainder`;
+        messageContent.innerHTML = `You have not received any messages yet`;
     }
 };
 
