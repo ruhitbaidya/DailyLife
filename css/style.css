@@ -273,10 +273,9 @@ hr{
 .notificationBar{
     cursor:pointer;
 }
-.notificationShow::after{
-    content :'';
-    width:10px;
-    height:10px;
+.notificationShow{
+    width:15px;
+    height:15px;
     border-radius:50%;
     position:absolute;
     top:15px;
@@ -284,6 +283,7 @@ hr{
     text-align:center;
     font-size:10px;
     background:red;
+    font-weight:bold;
 }
 
 #messageId{

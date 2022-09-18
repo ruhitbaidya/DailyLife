@@ -80,15 +80,19 @@ function removeRemainder(e){
     localStorage.setItem('remainderMsg', JSON.stringify(messgeData));
 }
 let booleShow = false;
+let notiCount = 0;
 function callingNotification(){
+    let notificationColor = document.querySelector('#notificationColor');
     messgeData.map((dataNoti)=>{
         if(dataNoti.date === remainderToDate.value){
+            notiCount++;
             messageContent.innerHTML += `<p>${dataNoti.message}</p>`;
-            messageContent.previousElementSibling.classList.add('notificationShow');
+            notificationColor.classList.add('notificationShow');
+            notificationColor.textContent = notiCount;
             booleShow  = true;
-            setInterval(()=>{
-                alert('You have A new message Please Check Your Notification')
-            }, 15000)
+            // setInterval(()=>{
+            //     alert('You have A new message Please Check Your Notification')
+            // }, 15000)
         }
     });
     if(!booleShow){
