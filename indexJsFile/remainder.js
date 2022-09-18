@@ -90,9 +90,9 @@ function callingNotification(){
             notificationColor.classList.add('notificationShow');
             notificationColor.textContent = notiCount;
             booleShow  = true;
-            // setInterval(()=>{
-            //     alert('You have A new message Please Check Your Notification')
-            // }, 15000)
+             setInterval(()=>{
+                 alert('You have A new message Please Check Your Notification')
+             }, 60000)
         }
     });
     if(!booleShow){
