@@ -9,7 +9,7 @@ let years = dates.getFullYear();
 
 month = month + 1;
 if(month < 10){
-    month = '0' + month
+   // month = '0' + month
 }
 remainderToDate.value = `${years}-${month}-${days}`
 let buttonclick = document.querySelector('.notificationBar');
